@@ -1,0 +1,14 @@
+/**
+ * Variables couleur — source : information site web/brand.md (§3)
+ * Aligné sur le site historique (public_html/style.css :root).
+ */
+:root {
+  --bg-main: #e9e3cf;
+  --card-bg: #f2f0e4;
+  --text-main: #353535;
+  --accent-blue: #354157;
+  --accent-blue-dark: #1e2433;
+  --accent-yellow: #f8b532;
+  --accent-yellow-light: #ffd36b;
+  --accent-red: #e2463b;
+}

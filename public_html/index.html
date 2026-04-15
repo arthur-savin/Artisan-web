@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Artisan-Web — expérience guidée pour artisans du bâtiment."
+    />
+    <meta name="theme-color" content="#e9e3cf" />
+    <link
+      rel="icon"
+      href="images/brand/logo-artisan-web.png"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link rel="apple-touch-icon" href="images/brand/logo-artisan-web.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Artisan-Web — Parcours guidé" />
+    <meta
+      property="og:description"
+      content="Artisan-Web — expérience guidée pour artisans du bâtiment."
+    />
+    <meta
+      property="og:image"
+      content="https://artisan-web.fr/images/brand/logo-artisan-web.png"
+    />
+    <meta property="og:image:width" content="500" />
+    <meta property="og:image:height" content="500" />
+    <meta
+      property="og:image:alt"
+      content="Artisan-Web — logo nacelle et typographie"
+    />
+    <meta name="twitter:card" content="summary" />
+    <title>Artisan-Web — Parcours guidé</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Charte : information site web/brand.md + brand-tokens.css -->
+    <link rel="stylesheet" href="css/brand-base.css" />
+    <link rel="stylesheet" href="css/brand-tokens.css" />
+    <link rel="stylesheet" href="css/site-chrome.css" />
+    <link rel="stylesheet" href="css/flow.css" />
+  </head>
+  <body>
+    <div id="aw-site-header"></div>
+    <div id="flash-layer" class="flash-layer" aria-hidden="true">
+      <p id="flash-text" class="flash-text"></p>
+    </div>
+
+    <main id="app" role="main">
+      <nav
+        class="flow-progress"
+        id="flow-progress"
+        aria-label="Progression du parcours"
+        hidden
+      >
+        <ol class="flow-progress__list" role="list">
+          <li class="flow-progress__item">
+            <button
+              type="button"
+              class="flow-progress__dot"
+              data-flow-step="profile"
+              aria-controls="step-profile"
+              disabled
+            >
+              <span class="sr-only">Étape 1 sur 4 — Votre profil</span>
+            </button>
+          </li>
+          <li class="flow-progress__item">
+            <button
+              type="button"
+              class="flow-progress__dot"
+              data-flow-step="acquisition"
+              aria-controls="step-acquisition"
+              disabled
+            >
+              <span class="sr-only">Étape 2 sur 4 — Acquisition clients</span>
+            </button>
+          </li>
+          <li class="flow-progress__item">
+            <button
+              type="button"
+              class="flow-progress__dot"
+              data-flow-step="trade"
+              aria-controls="step-trade"
+              disabled
+            >
+              <span class="sr-only">Étape 3 sur 4 — Type de chantiers</span>
+            </button>
+          </li>
+          <li class="flow-progress__item">
+            <button
+              type="button"
+              class="flow-progress__dot"
+              data-flow-step="goal"
+              aria-controls="step-goal"
+              disabled
+            >
+              <span class="sr-only">Étape 4 sur 4 — Objectif</span>
+            </button>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Intro -->
+      <section
+        id="step-intro"
+        class="step is-active"
+        data-step="intro"
+        aria-labelledby="intro-title"
+      >
+        <h1 class="brand-intro-title brand-logo-wrap" id="intro-title">
+          <img
+            class="brand-logo"
+            src="images/brand/logo-artisan-web.png"
+            width="500"
+            height="500"
+            alt="Artisan-Web"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </h1>
+        <p class="tagline">
+          Aujourd’hui, vos clients vous trouvent sur Google… ou chez vos
+          concurrents.
+        </p>
+        <button type="button" class="btn-primary" id="btn-start">
+          Commencer
+        </button>
+      </section>
+
+      <!-- Q1 -->
+      <section
+        id="step-profile"
+        class="step"
+        data-step="profile"
+        hidden
+        aria-hidden="true"
+      >
+        <h2 class="question-title">Vous êtes ?</h2>
+        <div
+          class="choice-grid choice-grid--2"
+          id="profile-choices"
+          role="group"
+          aria-label="Votre profil"
+        >
+          <button type="button" class="choice-card" data-value="artisan">
+            Artisan indépendant
+          </button>
+          <button type="button" class="choice-card" data-value="entreprise">
+            Entreprise / équipe
+          </button>
+        </div>
+      </section>
+
+      <!-- Q2 -->
+      <section
+        id="step-acquisition"
+        class="step"
+        data-step="acquisition"
+        hidden
+        aria-hidden="true"
+      >
+        <h2 class="question-title">Comment trouvez-vous vos clients ?</h2>
+        <div
+          class="choice-grid"
+          id="acquisition-choices"
+          role="group"
+          aria-label="Acquisition clients"
+        >
+          <button type="button" class="choice-card" data-value="bouche_oreille">
+            Bouche à oreille
+          </button>
+          <button type="button" class="choice-card" data-value="google">
+            Google
+          </button>
+          <button type="button" class="choice-card" data-value="plateformes">
+            Plateformes (pages jaunes, etc.)
+          </button>
+          <button type="button" class="choice-card" data-value="mix">
+            Un peu de tout
+          </button>
+        </div>
+      </section>
+
+      <!-- Q3 -->
+      <section
+        id="step-trade"
+        class="step"
+        data-step="trade"
+        hidden
+        aria-hidden="true"
+      >
+        <h2 class="question-title">Quel type de chantiers réalisez-vous ?</h2>
+        <p class="question-hint">Une seule réponse — la plus représentative</p>
+        <div class="trade-scroll">
+          <div
+            class="choice-grid choice-grid--trade"
+            id="trade-choices"
+            role="group"
+            aria-label="Type de chantiers"
+          >
+            <button type="button" class="choice-card" data-value="electricite">
+              <span class="choice-card__emoji" aria-hidden="true">⚡</span
+              >Électricité / technique
+            </button>
+            <button type="button" class="choice-card" data-value="plomberie">
+              <span class="choice-card__emoji" aria-hidden="true">🔥</span
+              >Plomberie / chauffage / clim
+            </button>
+            <button type="button" class="choice-card" data-value="menuiserie">
+              <span class="choice-card__emoji" aria-hidden="true">🪵</span
+              >Menuiserie / aménagement
+            </button>
+            <button type="button" class="choice-card" data-value="maconnerie">
+              <span class="choice-card__emoji" aria-hidden="true">🧱</span
+              >Maçonnerie / gros œuvre
+            </button>
+            <button type="button" class="choice-card" data-value="cloisons">
+              <span class="choice-card__emoji" aria-hidden="true">🏠</span
+              >Cloisons / rénovation intérieure
+            </button>
+            <button type="button" class="choice-card" data-value="toiture">
+              <span class="choice-card__emoji" aria-hidden="true">🏠</span
+              >Toiture / couverture
+            </button>
+            <button type="button" class="choice-card" data-value="facade">
+              <span class="choice-card__emoji" aria-hidden="true">🌡️</span
+              >Façade / isolation extérieure
+            </button>
+            <button type="button" class="choice-card" data-value="serrurerie">
+              <span class="choice-card__emoji" aria-hidden="true">🔑</span
+              >Serrurerie / fermeture
+            </button>
+            <button
+              type="button"
+              class="choice-card"
+              data-value="amenagement_ext"
+            >
+              <span class="choice-card__emoji" aria-hidden="true">🌳</span
+              >Aménagement extérieur
+            </button>
+            <button
+              type="button"
+              class="choice-card"
+              data-value="renovation_globale"
+            >
+              <span class="choice-card__emoji" aria-hidden="true">✨</span
+              >Rénovation globale
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Q4 -->
+      <section
+        id="step-goal"
+        class="step"
+        data-step="goal"
+        hidden
+        aria-hidden="true"
+      >
+        <h2 class="question-title">
+          Si demain vous pouviez avoir plus de clients, vous voudriez :
+        </h2>
+        <div
+          class="choice-grid"
+          id="goal-choices"
+          role="group"
+          aria-label="Objectif principal"
+        >
+          <button type="button" class="choice-card" data-value="appels">
+            Plus d’appels
+          </button>
+          <button type="button" class="choice-card" data-value="mieux_payes">
+            Des chantiers mieux payés
+          </button>
+          <button type="button" class="choice-card" data-value="google">
+            Être visible sur Google
+          </button>
+          <button type="button" class="choice-card" data-value="planning">
+            Remplir mon planning
+          </button>
+        </div>
+      </section>
+
+      <!-- Chargement + redirection -->
+      <section
+        id="step-loading"
+        class="step loader-step"
+        data-step="loading"
+        hidden
+        aria-hidden="true"
+        aria-live="polite"
+      >
+        <p class="question-title">On vous prépare quelque chose…</p>
+        <p class="tagline">
+          Page adaptée à votre métier — redirection en cours.
+        </p>
+        <div class="loader-brand" aria-hidden="true">
+          <img
+            src="images/brand/logo-artisan-web.png"
+            width="500"
+            height="500"
+            alt=""
+            decoding="async"
+          />
+        </div>
+        <div class="loader-dots" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+      </section>
+    </main>
+
+    <div id="aw-site-footer"></div>
+    <script src="js/site-chrome.js" defer></script>
+    <script src="js/flow.js" defer></script>
+  </body>
+</html>
