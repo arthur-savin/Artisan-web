@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="../images/brand/logo-artisan-web.png"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link rel="apple-touch-icon" href="../images/brand/logo-artisan-web.png" />
+    <title>Site web serrurier — Artisan-Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/brand-base.css" />
+    <link rel="stylesheet" href="../css/brand-tokens.css" />
+    <link rel="stylesheet" href="../css/site-chrome.css" />
+    <link rel="stylesheet" href="../css/flow.css" />
+    <link rel="stylesheet" href="stub-common.css" />
+  </head>
+  <body>
+    <div id="aw-site-header"></div>
+    <div id="app">
+      <div class="stub-wrap">
+        <div class="brand-logo-wrap">
+          <img
+            class="brand-logo brand-logo--page-stub"
+            src="../images/brand/logo-artisan-web.png"
+            width="500"
+            height="500"
+            alt="Artisan-Web"
+            decoding="async"
+          />
+        </div>
+        <h1 class="question-title">Site web serrurier</h1>
+        <p class="tagline">Page pilier — contenu à intégrer (SEO, offre, CTA).</p>
+        <p class="tagline" id="params"></p>
+        <p><a href="../index.html">← Parcours guidé</a></p>
+      </div>
+    </div>
+    <div id="aw-site-footer"></div>
+    <script>
+      (function () {
+        var q = new URLSearchParams(location.search);
+        var o = q.get("objectif");
+        var el = document.getElementById("params");
+        if (o && el) el.textContent = "Objectif transmis : " + o + ".";
+      })();
+    </script>
+    <script src="../js/site-chrome.js" defer></script>
+  </body>
+</html>

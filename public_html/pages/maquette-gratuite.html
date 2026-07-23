@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Demandez une maquette de site web gratuite pour votre activité d’artisan — première direction visuelle, sans engagement."
+    />
+    <meta name="theme-color" content="#e9e3cf" />
+    <link
+      rel="icon"
+      href="../images/brand/logo-artisan-web.png"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link rel="apple-touch-icon" href="../images/brand/logo-artisan-web.png" />
+    <title>Maquette gratuite — Artisan-Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/brand-base.css" />
+    <link rel="stylesheet" href="../css/brand-tokens.css" />
+    <link rel="stylesheet" href="../css/site-chrome.css" />
+    <link rel="stylesheet" href="../css/maquette-gratuite.css" />
+    <link rel="stylesheet" href="stub-common.css" />
+  </head>
+  <body>
+    <div id="aw-site-header"></div>
+
+    <main class="aw-maquette" id="maquette-main">
+      <div class="aw-maquette__brand" aria-hidden="true">
+        <img
+          src="../images/brand/logo-artisan-web.png"
+          width="500"
+          height="500"
+          alt=""
+          decoding="async"
+        />
+      </div>
+      <h1 class="aw-maquette__title">Maquette gratuite</h1>
+      <p class="aw-maquette__lead">
+        Une première image de votre futur site, pour voir si la direction vous
+        convient — sans engagement de votre part.
+      </p>
+
+      <div class="aw-maquette__explain" role="note">
+        <p>
+          La maquette gratuite, c’est un <strong>premier aperçu</strong> : elle
+          montre à quoi pourrait ressembler votre site, dans l’esprit et le
+          style. Ce n’est <strong>pas</strong> une version prête à mettre en
+          ligne telle quelle. Si le rendu vous parle, on pourra ensuite la
+          retravailler ensemble pour bâtir un site complet, solide et vraiment
+          adapté à votre activité.
+        </p>
+      </div>
+
+      <p class="aw-maquette__form-intro" id="form-intro">
+        Quelques infos suffisent — on vous recontacte pour la suite.
+      </p>
+
+      <p
+        id="maquette-feedback"
+        class="aw-maquette__feedback"
+        role="status"
+        aria-live="polite"
+        hidden
+      ></p>
+
+      <form
+        id="maquette-form"
+        class="aw-maquette__form"
+        novalidate
+        data-submit-url="../api/submit-maquette.php"
+      >
+        <input type="hidden" name="source" value="page_maquette" />
+
+        <div class="aw-maquette__row--2">
+          <div class="aw-maquette__field">
+            <label for="mq-prenom">Prénom</label>
+            <input
+              id="mq-prenom"
+              name="prenom"
+              type="text"
+              autocomplete="given-name"
+              required
+              maxlength="120"
+            />
+          </div>
+          <div class="aw-maquette__field">
+            <label for="mq-nom">Nom</label>
+            <input
+              id="mq-nom"
+              name="nom"
+              type="text"
+              autocomplete="family-name"
+              required
+              maxlength="120"
+            />
+          </div>
+        </div>
+
+        <div class="aw-maquette__field">
+          <label for="mq-entreprise"
+            >Entreprise <span class="aw-maquette__hint">(facultatif)</span></label
+          >
+          <input
+            id="mq-entreprise"
+            name="entreprise"
+            type="text"
+            autocomplete="organization"
+            maxlength="200"
+          />
+        </div>
+
+        <div class="aw-maquette__field">
+          <label for="mq-metier">Métier</label>
+          <input
+            id="mq-metier"
+            name="metier"
+            type="text"
+            placeholder="Ex. électricien, couvreur…"
+            autocomplete="off"
+            required
+            maxlength="160"
+          />
+        </div>
+
+        <div class="aw-maquette__field">
+          <label for="mq-ville">Ville ou zone d’intervention</label>
+          <input
+            id="mq-ville"
+            name="ville"
+            type="text"
+            placeholder="Ex. Lyon et alentours"
+            autocomplete="address-level2"
+            maxlength="200"
+          />
+        </div>
+
+        <div class="aw-maquette__field">
+          <label for="mq-email">E-mail</label>
+          <input
+            id="mq-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            inputmode="email"
+            required
+            maxlength="254"
+          />
+        </div>
+
+        <div class="aw-maquette__field">
+          <label for="mq-tel"
+            >Téléphone <span class="aw-maquette__hint">(facultatif)</span></label
+          >
+          <input
+            id="mq-tel"
+            name="telephone"
+            type="tel"
+            autocomplete="tel"
+            maxlength="40"
+          />
+        </div>
+
+        <div class="aw-maquette__field">
+          <label for="mq-besoin">Votre besoin principal, aujourd’hui</label>
+          <select id="mq-besoin" name="besoin_principal" required>
+            <option value="" disabled selected>Choisir une option</option>
+            <option value="appels">Recevoir plus d’appels / de demandes</option>
+            <option value="google">Être mieux visible sur Google</option>
+            <option value="image_pro">Avoir une image plus professionnelle</option>
+            <option value="planning">Mieux remplir mon planning</option>
+            <option value="pas_sur">Je ne suis pas encore sûr</option>
+          </select>
+        </div>
+
+        <div class="aw-maquette__field">
+          <label for="mq-message"
+            >Un détail utile ?
+            <span class="aw-maquette__hint">(facultatif)</span></label
+          >
+          <textarea
+            id="mq-message"
+            name="message"
+            maxlength="2000"
+            placeholder="Ex. site actuel, délais, ce qui vous bloque…"
+          ></textarea>
+        </div>
+
+        <div class="aw-maquette__field aw-maquette__hp" aria-hidden="true">
+          <label for="mq-hp">Ne pas remplir</label>
+          <input id="mq-hp" name="website" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div class="aw-maquette__consent">
+          <input id="mq-consent" name="consent_rgpd" type="checkbox" value="1" required />
+          <label for="mq-consent">
+            J’accepte que mes informations soient utilisées pour me recontacter
+            au sujet de ma demande de maquette. Pas d’engagement : vous décidez
+            ensuite si vous souhaitez aller plus loin.
+          </label>
+        </div>
+
+        <button type="submit" class="aw-maquette__submit" id="mq-submit">
+          Envoyer ma demande
+        </button>
+      </form>
+    </main>
+
+    <div id="aw-site-footer"></div>
+    <script src="../js/site-chrome.js" defer></script>
+    <script src="../js/maquette-form.js" defer></script>
+  </body>
+</html>

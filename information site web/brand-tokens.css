@@ -1,0 +1,79 @@
+/**
+ * Artisan-Web — mini kit dev (design tokens + typo)
+ * Charger APRÈS style.min.css pour réutiliser les variables :root existantes.
+ *
+ * Exemple dans le <head> :
+ *   <link rel="stylesheet" href="style.min.css" />
+ *   <link rel="stylesheet" href="brand-tokens.css" />
+ */
+
+:root {
+  /* Alias sémantiques (référencent style.css / style.min.css) */
+  --aw-color-bg: var(--bg-main);
+  --aw-color-surface: var(--card-bg);
+  --aw-color-text: var(--text-main);
+  --aw-color-text-muted: var(--accent-blue);
+  --aw-color-heading: var(--accent-blue-dark);
+  --aw-color-primary: var(--accent-yellow);
+  --aw-color-primary-hover: var(--accent-yellow-light);
+  --aw-color-accent: var(--accent-red);
+  --aw-color-cta-text: var(--accent-blue-dark);
+  /* Carte « offre premium » (hors tokens globaux historiques) */
+  --aw-color-featured-start: #6271ff;
+  --aw-color-featured-end: #7c8aff;
+
+  --aw-font-display: "Bebas Neue", sans-serif;
+  --aw-font-body: "Roboto", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --aw-weight-regular: 400;
+  --aw-weight-medium: 500;
+  --aw-weight-bold: 700;
+}
+
+/* Échelle typo pour nouveaux composants / maquettes (alignée sur le site actuel) */
+.aw-typo-h1 {
+  font-family: var(--aw-font-display);
+  font-weight: var(--aw-weight-regular);
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--aw-color-heading);
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+.aw-typo-h2 {
+  font-family: var(--aw-font-display);
+  font-weight: var(--aw-weight-regular);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--aw-color-heading);
+  line-height: 1.25;
+  margin: 0 0 2.5rem;
+}
+
+.aw-typo-p {
+  font-family: var(--aw-font-body);
+  font-weight: var(--aw-weight-regular);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--aw-color-text);
+  margin: 0 0 1rem;
+}
+
+.aw-typo-lead {
+  font-family: var(--aw-font-body);
+  font-weight: var(--aw-weight-medium);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--aw-color-text-muted);
+  margin: 0 0 0.75rem;
+}
+
+.aw-typo-label {
+  font-family: var(--aw-font-body);
+  font-weight: var(--aw-weight-medium);
+  font-size: 0.9rem;
+  color: var(--aw-color-heading);
+}
