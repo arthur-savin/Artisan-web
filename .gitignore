@@ -1,0 +1,19 @@
+# Dépendances / IDE
+.cursor/
+.vscode/
+*.log
+.DS_Store
+Thumbs.db
+
+# Secrets & hors déploiement
+secure-config/
+DO_NOT_UPLOAD_HERE
+.env
+.env.*
+*.pem
+*.key
+
+# Cache / build
+node_modules/
+dist/
+.cache/

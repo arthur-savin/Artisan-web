@@ -1,0 +1,220 @@
+{
+  "brand": {
+    "name": "Artisan-Web",
+    "tagline": "Sites web pour artisans",
+    "logo": "images/LOGOS/logotransparent.png",
+    "url": "https://www.artisan-web.com",
+    "address": "400 chemin du Violet, 69510 Thurins",
+    "area": "Lyon et Auvergne-Rhône-Alpes"
+  },
+  "nav": [
+    { "label": "Accueil", "href": "#hero" },
+    { "label": "Pourquoi moi ?", "href": "#why" },
+    { "label": "Étapes", "href": "#process" },
+    { "label": "Réalisations", "href": "#portfolio" },
+    { "label": "Offres", "href": "#offers" },
+    { "label": "FAQ", "href": "#faq" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "hero": {
+    "titleMain": "Création de site web pour artisans",
+    "titlePlace": "",
+    "subtitle": "Plus d’appels et de demandes de devis.",
+    "priceLabel": "à partir de",
+    "price": "300 €",
+    "chips": ["Appels entrants", "Devis qualifiés", "SEO local", "Clé en main"],
+    "ctaPrimary": "Je réserve un appel",
+    "ctaSecondary": "Voir la réalisation"
+  },
+  "why": {
+    "eyebrow": "Notre savoir-faire",
+    "title": "Vos clients vous trouvent plus facilement",
+    "subtitle": "Un site web qui fonctionne, sans complications ni jargon technique. Artisan-Web accompagne les artisans du bâtiment à Lyon et en Auvergne-Rhône-Alpes.",
+    "testimonial": {
+      "quote": "Avant, j'avais du mal à expliquer mon travail aux clients. Maintenant, mon site montre directement mes réalisations. J'ai reçu 3 demandes de devis la première semaine.",
+      "name": "Marc Dubois",
+      "role": "Plombier, Lyon",
+      "avatar": "images/LOGOS/plombier.webp"
+    },
+    "benefits": [
+      {
+        "title": "Plus de clients",
+        "text": "Votre site apparaît dans les recherches Google locales. Les clients vous trouvent quand ils cherchent votre métier près de chez eux.",
+        "icon": "images/ICONS/icones Pourquoi me choisir/4.png"
+      },
+      {
+        "title": "Moins de temps perdu",
+        "text": "Fini les explications au téléphone. Vos réalisations et tarifs sont en ligne. Les clients arrivent déjà informés.",
+        "icon": "images/ICONS/icones Pourquoi me choisir/2.png"
+      },
+      {
+        "title": "Plus de crédibilité",
+        "text": "Un site professionnel rassure. Vos clients voient que vous êtes sérieux avant même de vous appeler.",
+        "icon": "images/ICONS/icones Pourquoi me choisir/1.png"
+      },
+      {
+        "title": "Plus de rentabilité",
+        "text": "Un site qui fonctionne, c'est des devis qui arrivent même quand vous êtes sur un chantier.",
+        "icon": "images/ICONS/icones Pourquoi me choisir/3.png"
+      }
+    ]
+  },
+  "process": {
+    "title": "Votre site internet artisan en 5 étapes",
+    "steps": [
+      {
+        "number": 1,
+        "title": "Cadrage du projet",
+        "text": "Nous définissons ensemble l'objectif de votre site, vos contraintes et vos priorités business pour bâtir une stratégie adaptée à votre métier d'artisan.",
+        "icon": "images/ICONS/1.png"
+      },
+      {
+        "number": 2,
+        "title": "Stratégie de contenu et UX",
+        "text": "Construction de l'arborescence, choix des sections clés (présentation, services, réalisations, avis clients, contact) et optimisation du contenu pour convertir vos visiteurs en demandes de devis.",
+        "icon": "images/ICONS/2.png"
+      },
+      {
+        "number": 3,
+        "title": "Conception UI",
+        "text": "Création d'une interface simple, claire et rassurante, aux couleurs de votre entreprise, pensée pour être lisible sur mobile comme sur ordinateur.",
+        "icon": "images/ICONS/3.png"
+      },
+      {
+        "number": 4,
+        "title": "Intégration",
+        "text": "Intégration du site, mise en ligne, configuration des formulaires de contact et des outils essentiels (statistiques, base SEO…).",
+        "icon": "images/ICONS/5.png"
+      },
+      {
+        "number": 5,
+        "title": "Livraison",
+        "text": "Vous repartez avec un site prêt à l'emploi et une courte vidéo pour le prendre en main.",
+        "icon": "images/ICONS/4.png"
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Réalisation phare",
+    "subtitle": "Mon plus gros chantier web à ce jour — un site pro pour un négoce de matériaux de couverture.",
+    "featured": {
+      "name": "AU FAITE",
+      "url": "https://www.aufaite.fr/",
+      "tag": "Chantier majeur",
+      "role": "Création site web sur mesure",
+      "description": "Site vitrine et catalogue pour un négoce de matériaux de couverture à Vénissieux : navigation claire, pages produits, localisation et prise de contact — pensé pour générer des appels et des visites magasin.",
+      "features": [
+        "Catalogue & gammes",
+        "SEO local",
+        "Responsive",
+        "Contact & localisation"
+      ],
+      "images": [
+        {
+          "id": "hero",
+          "label": "Accueil",
+          "src": "images/EXEMPLES_SITES/aufaite-hero.png",
+          "alt": "Page d'accueil du site AU FAITE – réalisation Artisan-Web"
+        },
+        {
+          "id": "facade",
+          "label": "Magasin",
+          "src": "images/EXEMPLES_SITES/aufaite-facade.jpg",
+          "alt": "Façade du magasin AU FAITE à Vénissieux"
+        },
+        {
+          "id": "logo",
+          "label": "Identité",
+          "src": "images/EXEMPLES_SITES/aufaite-logo.png",
+          "alt": "Logo AU FAITE"
+        }
+      ]
+    }
+  },
+  "proofs": {
+    "items": [
+      {
+        "title": "+50% de demandes",
+        "text": "En moyenne après mise en ligne"
+      },
+      {
+        "title": "10-15 jours",
+        "text": "Délai de livraison garanti"
+      },
+      {
+        "title": "SEO local inclus",
+        "text": "Google Business Profile optimisé"
+      }
+    ],
+    "sectors": ["Plombier", "Menuisier", "Électricien", "Maçon", "Peintre", "Et plus…"]
+  },
+  "offers": {
+    "title": "Nos offres",
+    "plans": [
+      {
+        "id": "depart",
+        "badge": "1",
+        "title": "Offre de départ",
+        "subtitle": "Idéale pour se lancer rapidement",
+        "price": "300€",
+        "priceNote": "à partir de",
+        "featured": false,
+        "features": [
+          "Une page vitrine claire et professionnelle",
+          "Contenu adapté à votre métier",
+          "Adapté au SEO local (Google Maps, recherche par ville)",
+          "Formulaire de contact et appel à l'action",
+          "Livraison en 10-15 jours ouvrés"
+        ],
+        "note": "Des frais de service de 15 € par mois s’appliquent après l’acquisition du site web.",
+        "cta": "Prendre rendez-vous",
+        "modalType": "appel"
+      },
+      {
+        "id": "perso",
+        "badge": "2",
+        "title": "Offre personnalisée",
+        "subtitle": "Uniquement sur devis",
+        "price": null,
+        "priceNote": null,
+        "featured": true,
+        "features": [
+          "Nombre de pages illimité selon vos besoins",
+          "Pages services détaillées pour chaque activité",
+          "Optimisation SEO avancée",
+          "Accompagnement sur la stratégie web"
+        ],
+        "note": null,
+        "cta": "Demander un devis",
+        "modalType": "devis"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "items": [
+      {
+        "q": "Combien de temps pour créer mon site ?",
+        "a": "Pour l’offre de départ, comptez entre 10 et 15 jours ouvrés à partir du moment où tous les contenus sont validés. Pour une offre personnalisée, le délai est adapté à la taille du projet."
+      },
+      {
+        "q": "Ai-je besoin de rédiger tous les textes ?",
+        "a": "Non. Nous pouvons partir de vos documents existants (devis, plaquettes, fiches métiers) et les adapter pour le web tout en respectant votre manière de parler à vos clients."
+      },
+      {
+        "q": "Le site sera-t-il bien référencé sur Google ?",
+        "a": "Votre site est conçu dès le départ pour le référencement naturel : structure claire, mots-clés locaux, temps de chargement optimisé et affichage adapté au mobile."
+      },
+      {
+        "q": "Que se passe-t-il après la livraison ?",
+        "a": "Vous gardez la main sur votre site. En option, nous pouvons également gérer pour vous les mises à jour, petites modifications et évolutions."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Un projet de site web pour votre activité d’artisan ?",
+    "text": "Basés près de Lyon (Thurins), nous créons des sites internet pour plombiers, électriciens, menuisiers et artisans du bâtiment en Auvergne-Rhône-Alpes. Devis rapide, suivi constant.",
+    "ctaPrimary": "Réserver un appel",
+    "ctaSecondary": "Demander un devis"
+  }
+}

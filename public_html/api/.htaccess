@@ -1,0 +1,25 @@
+# Protection endpoint formulaire — api/form.php
+# À placer dans public_html/api/.htaccess sur Hostinger
+
+# Forcer HTTPS
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Interdire le listing des répertoires
+Options -Indexes
+
+# Limiter aux requêtes POST (et OPTIONS pour CORS preflight)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_METHOD} !^POST$ [NC]
+  RewriteCond %{REQUEST_METHOD} !^OPTIONS$ [NC]
+  RewriteRule ^form\.php$ - [F,L]
+</IfModule>
+
+# Sécurité : pas d’exécution de scripts autres que form.php si besoin
+<FilesMatch "\.(env|log|json|sqlite|db)$">
+  Require all denied
+</FilesMatch>

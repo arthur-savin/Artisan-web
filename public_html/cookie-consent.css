@@ -1,0 +1,114 @@
+/* Bandeau consentement cookies RGPD */
+.cookie-consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #1e2433 0%, #354157 100%);
+  color: #fff;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s ease-out;
+}
+
+.cookie-consent-banner.cookie-consent-visible {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.cookie-consent-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+}
+
+.cookie-consent-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.cookie-consent-desc {
+  flex: 1 1 280px;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.cookie-consent-desc a {
+  color: #ffd36b;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookie-consent-desc a:hover {
+  color: #f8b532;
+}
+
+.cookie-consent-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.cookie-consent-btn {
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.cookie-consent-accept {
+  background: #f8b532;
+  color: #1e2433;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cookie-consent-accept:hover {
+  background: #ffd36b;
+}
+
+.cookie-consent-refuse {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.cookie-consent-refuse:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 640px) {
+  .cookie-consent-banner {
+    padding: 14px 16px;
+  }
+  .cookie-consent-inner {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  .cookie-consent-title {
+    font-size: 1rem;
+  }
+  .cookie-consent-desc {
+    font-size: 0.85rem;
+  }
+  .cookie-consent-buttons {
+    justify-content: center;
+  }
+}

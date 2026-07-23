@@ -1,0 +1,265 @@
+/**
+ * Artisan-Web — tokens + animations (complément Tailwind)
+ * Charte : brand.md / brand-tokens.css
+ */
+
+:root {
+  --bg-main: #e9e3cf;
+  --card-bg: #f2f0e4;
+  --text-main: #353535;
+  --accent-blue: #354157;
+  --accent-blue-dark: #1e2433;
+  --accent-yellow: #f8b532;
+  --accent-yellow-light: #ffd36b;
+  --accent-red: #e2463b;
+  --aw-color-featured-start: #6271ff;
+  --aw-color-featured-end: #7c8aff;
+  --aw-font-display: "Bebas Neue", sans-serif;
+  --aw-font-body: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --aw-shadow-soft: 0 18px 40px rgba(30, 36, 51, 0.1);
+  --aw-shadow-card: 0 14px 32px rgba(30, 36, 51, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: var(--aw-font-body);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* Atmosphere — grain + soft washes (identité Artisan-Web, pas le style client) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(248, 181, 50, 0.18), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 20%, rgba(53, 65, 87, 0.08), transparent 50%),
+    radial-gradient(ellipse 50% 30% at 50% 100%, rgba(226, 70, 59, 0.06), transparent 45%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.site-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--accent-yellow);
+  color: var(--accent-blue-dark);
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.font-display {
+  font-family: var(--aw-font-display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+/* Hero brand entrance */
+@keyframes heroRise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroZoom {
+  from {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-anim-text {
+  animation: heroRise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-anim-media {
+  animation: heroZoom 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+/* Floating header glass (charte crème) */
+.aw-header {
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.aw-header.is-scrolled {
+  background-color: rgba(242, 240, 228, 0.92);
+  border-color: rgba(30, 36, 51, 0.08);
+  box-shadow: var(--aw-shadow-soft);
+}
+
+/* Process progress line */
+.process-line-fill {
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.45s ease;
+}
+
+/* Portfolio tab media */
+.portfolio-media {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.portfolio-media.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Modal */
+.aw-modal {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.aw-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.aw-modal-panel {
+  transform: translateY(16px) scale(0.98);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.aw-modal.is-open .aw-modal-panel {
+  transform: translateY(0) scale(1);
+}
+
+.form-group-devis {
+  display: none;
+}
+
+body.modal-devis .form-group-devis {
+  display: block;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Cookie banner alignment with new tokens */
+.cookie-consent-banner {
+  background: var(--card-bg) !important;
+  color: var(--text-main) !important;
+  border-top: 1px solid rgba(30, 36, 51, 0.1);
+}
+
+/* FAQ open marker */
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  font-weight: 700;
+  color: var(--accent-blue-dark);
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+/* États interactifs (évite les variants Tailwind fragiles en HTML) */
+.main-nav.is-open {
+  display: flex;
+}
+
+#navBackdrop.is-open {
+  display: block;
+}
+
+#menuToggle.is-open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#menuToggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+#menuToggle.is-open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.progress-dot.is-active {
+  background-color: var(--accent-yellow);
+}
+
+[data-process-step].is-active {
+  border-color: rgba(248, 181, 50, 0.5);
+  background-color: var(--card-bg);
+}
+
+[data-portfolio-tab].is-active {
+  background-color: var(--accent-blue-dark);
+  color: var(--accent-yellow);
+}
