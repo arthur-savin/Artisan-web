@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "export:hostinger": "next build && node scripts/sync-public-html.mjs"
   },
   "engines": {
     "node": ">=20"

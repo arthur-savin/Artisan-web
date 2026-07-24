@@ -47,7 +47,7 @@ export function ContactModal() {
       body.set("requestType", type);
       body.set("pageUrl", window.location.href);
 
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/api/form.php", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body,

@@ -18,15 +18,19 @@ npm run dev
 
 Ouvre [http://localhost:3000](http://localhost:3000).
 
-## Production (Hostinger Node.js)
+## Production Hostinger (recommandé : site statique)
 
-1. Importer le dépôt GitHub
-2. Choisir le projet **Node.js** (pas « static website »)
-3. Build : `npm run build`
-4. Start : `npm start`
-5. Node : **20+**
+Hostinger affiche le site depuis `public_html/`.
 
-### Variables d’environnement (formulaire)
+```bash
+npm run export:hostinger
+```
+
+Cela génère le site (HTML + CSS + images) dans `out/`, puis le copie dans `public_html/` (en gardant `public_html/api/` pour le formulaire PHP).
+
+Puis pousse sur GitHub / déploie.
+
+### Variables (si Node + Mailgun plus tard)
 
 | Variable | Rôle |
 |----------|------|
