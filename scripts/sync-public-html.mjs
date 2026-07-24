@@ -12,8 +12,8 @@ if (!existsSync(outDir)) {
 
 mkdirSync(publicHtml, { recursive: true });
 
-// Conserve l'API PHP existante
-const keep = new Set(["api"]);
+// Conserve l'API PHP + fichiers serveur Hostinger
+const keep = new Set(["api", ".htaccess", "robots.txt", "sitemap.xml"]);
 
 for (const entry of readdirSync(publicHtml)) {
   if (keep.has(entry)) continue;
