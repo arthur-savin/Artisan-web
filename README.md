@@ -30,13 +30,14 @@ Cela génère le site (HTML + CSS + images) dans `out/`, puis le copie dans `pub
 
 Puis pousse sur GitHub / déploie.
 
-### Variables (si Node + Mailgun plus tard)
+### Formulaire / Mailgun (obligatoire sur Hostinger)
 
-| Variable | Rôle |
-|----------|------|
-| `MAILGUN_API_KEY` | Clé API Mailgun |
-| `MAILGUN_DOMAIN` | Domaine Mailgun |
-| `CONTACT_TO_EMAIL` | Destinataire des demandes |
+1. Le fichier `public_html/api/form.php` doit être déployé (sinon erreur 404, aucun mail).
+2. Place `secure-config/mailgun.php` **hors** `public_html` (ex. à côté de `public_html`).
+3. Dans Mailgun :
+   - `MAIL_FROM` doit utiliser ton domaine Mailgun (pas `votredomaine.com`)
+   - en sandbox, autorise le destinataire `MAIL_TO` dans Authorized Recipients
+4. Test : envoie une demande et vérifie qu’aucune erreur rouge n’apparaît dans la modale.
 
 ## Structure utile
 
