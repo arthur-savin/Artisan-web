@@ -30,7 +30,7 @@ export function ContactModal() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    if (String(data.get("website") || "").trim()) {
+    if (String(data.get("company_website_url_hp") || "").trim()) {
       setStatus("success");
       setMessage("Merci, votre demande a bien été envoyée.");
       form.reset();
@@ -52,7 +52,19 @@ export function ContactModal() {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body,
       });
-      const json = (await res.json()) as { ok?: boolean; message?: string };
+
+      const raw = await res.text();
+      let json: { ok?: boolean; message?: string; code?: string } = {};
+      try {
+        json = raw ? (JSON.parse(raw) as typeof json) : {};
+      } catch {
+        throw new Error(
+          res.status === 404
+            ? "Endpoint mailing introuvable (/api/form.php). Vérifiez le déploiement Hostinger."
+            : "Réponse serveur invalide. Réessayez plus tard.",
+        );
+      }
+
       if (!res.ok || !json.ok) {
         throw new Error(json.message || "Erreur d’envoi");
       }
@@ -102,7 +114,7 @@ export function ContactModal() {
         <form className="mt-6 space-y-4" onSubmit={onSubmit} noValidate>
           <input
             type="text"
-            name="website"
+            name="company_website_url_hp"
             tabIndex={-1}
             autoComplete="off"
             className="absolute -left-[9999px]"
