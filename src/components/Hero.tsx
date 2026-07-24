@@ -57,7 +57,7 @@ export function Hero() {
         </div>
 
         <a
-          href="https://www.aufaite.fr/"
+          href="https://aufaite.fr/"
           target="_blank"
           rel="noopener noreferrer"
           className="hero-anim-media group relative block cursor-pointer overflow-hidden rounded-3xl border border-aw-heading/10 bg-aw-surface shadow-card transition-shadow duration-300 hover:shadow-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aw-primary"
